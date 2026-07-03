@@ -14,19 +14,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cursos = $_POST["cursos"];
     $turma = $_POST["turma"];
     $telefone = trim($_POST["telefone"]);
-}
-
-$aluno = [
-    "nome" => $nome,
-    "idade" => $idade,
-    "email" => $email,
-    "cursos" => $cursos,
-    "turma" => $turma,
-    "telefone" => $telefone
-];
-
+    
+    $aluno = [
+        "nome" => $nome,
+        "idade" => $idade,
+        "email" => $email,
+        "cursos" => $cursos,
+        "turma" => $turma,
+        "telefone" => $telefone
+    ];
+    
     $_SESSION["alunos"][] = $aluno;
-
+}
+    
 ?>
 
 <!DOCTYPE html>
@@ -103,7 +103,7 @@ $aluno = [
     echo "</table>";
 } else {
     echo "<p>Nenhum aluno cadastrado.</p>";
-    
+
 }
 
 ?>
