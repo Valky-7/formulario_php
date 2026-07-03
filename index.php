@@ -12,7 +12,6 @@
     <h2>Cadastro de Alunos</h2>
 
     <div class="form">
-        <form action="#" method="POST">
         
         <form>
             
@@ -46,5 +45,11 @@
     </div>
 
     <br><h2>Alunos Cadastrados</h2>
+
+<?php
+
+
+
+?>
 </body>
 </html>
