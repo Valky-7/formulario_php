@@ -91,12 +91,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    
     foreach ($_SESSION["alunos"] as $aluno) {
         echo "<tr>";
-        echo "<td>" . htmlspecialchars($aluno["nome"]) . "</td";
-        echo "<td>" . htmlspecialchars($aluno["idade"]) . "</td";
-        echo "<td>" . htmlspecialchars($aluno["email"]) . "</td";
-        echo "<td>" . htmlspecialchars($aluno["cursos"]) . "</td";
-        echo "<td>" . htmlspecialchars($aluno["turma"]) . "</td";
-        echo "<td>" . htmlspecialchars($aluno["telefone"]) . "</td";
+        echo "<td>" . $aluno["nome"] . "</td";
+        echo "<td>" . $aluno["idade"] . "</td";
+        echo "<td>" . $aluno["email"] . "</td";
+        echo "<td>" . $aluno["cursos"] . "</td";
+        echo "<td>" . $aluno["turma"] . "</td";
+        echo "<td>" . $aluno["telefone"] . "</td";
         echo "</tr>";
     }
 
