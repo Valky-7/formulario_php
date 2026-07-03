@@ -6,7 +6,7 @@ if (!isset($_SESSION["alunos"])) {
     $_SESSION["alunos"] = [];
 }
 
-if ($SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $nome = trim($_POST["nome"]);
     $idade = $_POST["idade"];
@@ -89,7 +89,22 @@ $aluno = [
         echo "<th>Telefone</th>";
         echo "</tr>";
    
-    foreach ($_SESSION["alunos"] as $key => $value) 
+    foreach ($_SESSION["alunos"] as $aluno) {
+        echo "<tr>";
+        echo "<td>" . htmlspecialchars($aluno["nome"]) . "</td";
+        echo "<td>" . htmlspecialchars($aluno["idade"]) . "</td";
+        echo "<td>" . htmlspecialchars($aluno["email"]) . "</td";
+        echo "<td>" . htmlspecialchars($aluno["cursos"]) . "</td";
+        echo "<td>" . htmlspecialchars($aluno["turma"]) . "</td";
+        echo "<td>" . htmlspecialchars($aluno["telefone"]) . "</td";
+        echo "</tr>";
+    }
+
+    echo "</table>";
+} else {
+    echo "<p>Nenhum aluno cadastrado.</p>";
+    
+}
 
 ?>
 
