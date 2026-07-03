@@ -16,6 +16,16 @@ if ($SERVER["REQUEST_METHOD"] == "POST") {
     $telefone = trim($_POST["telefone"]);
 }
 
+$aluno = [
+    "nome" => $nome,
+    "idade" => $idade,
+    "email" => $email,
+    "cursos" => $cursos,
+    "turma" => $turma,
+    "telefone" => $telefone
+];
+
+    $_SESSION["alunos"][] = $aluno;
 
 ?>
 
@@ -66,6 +76,22 @@ if ($SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
     <br><h2>Alunos Cadastrados</h2>
+<?php
+
+    if (count($_SESSION["alunos"]) > 0) {
+        echo "<table>";
+        echo "<tr>";
+        echo "<th>Nome</th>";
+        echo "<th>Idade</th>";
+        echo "<th>Email</th>";
+        echo "<th>Cursos</th>";
+        echo "<th>Turma</th>";
+        echo "<th>Telefone</th>";
+        echo "</tr>";
+   
+    foreach ($_SESSION["alunos"] as $key => $value) {
+
+?>
 
 </body>
 </html>
