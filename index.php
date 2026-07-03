@@ -89,7 +89,7 @@ $aluno = [
         echo "<th>Telefone</th>";
         echo "</tr>";
    
-    foreach ($_SESSION["alunos"] as $key => $value) {
+    foreach ($_SESSION["alunos"] as $key => $value) 
 
 ?>
 
