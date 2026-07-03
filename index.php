@@ -1,3 +1,24 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION["alunos"])) {
+    $_SESSION["alunos"] = [];
+}
+
+if ($SERVER["REQUEST_METHOD"] == "POST") {
+
+    $nome = trim($_POST["nome"]);
+    $idade = $_POST["idade"];
+    $email = trim($_POST["email"]);
+    $cursos = $_POST["cursos"];
+    $turma = $_POST["turma"];
+    $telefone = trim($_POST["telefone"]);
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -13,19 +34,19 @@
 
     <div class="form">
         
-        <form>
+        <form method="POST" action="">
             
             <label>Nome Completo</label>
             <input type="text" id="nome" name="nome">
 
             <label>Idade</label>
-            <input type="text" id="idade" name="idade">
+            <input type="number" id="idade" name="idade" required>
 
             <label>E-mail</label>
-            <input type="text" id="email" name="email">
+            <input type="email" id="email" name="email" required>
 
             <label for="cursos">Cursos</label>
-            <select name="cursos" id="cursos">
+            <select name="cursos" id="cursos" required>
                 <option value="Técnico em Informática para Internet">Técnico em Informática para Internet</option>
                 <option value="Técnico em Mecatrônica">Técnico em Mecatrônica</option>
                 <option value="Técnico em Multimídia">Técnico em Multimídia</option>
@@ -33,10 +54,10 @@
             </select>
 
             <label>Turma</label>
-            <input type="text" id="turma" name="turma">
+            <input type="text" id="turma" name="turma" required>
 
             <label>Telefone</label>
-            <input type="text" id="telefone" name="telefone">
+            <input type="text" id="telefone" name="telefone" required>
 
             <button type="submit" class="btn-secondary">Cadastrar Aluno</button>
 
@@ -46,10 +67,5 @@
 
     <br><h2>Alunos Cadastrados</h2>
 
-<?php
-
-
-
-?>
 </body>
 </html>
