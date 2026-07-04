@@ -36,6 +36,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de alunos</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1>Sistema Escolar</h1><br>
@@ -91,12 +94,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    
     foreach ($_SESSION["alunos"] as $aluno) {
         echo "<tr>";
-        echo "<td>" . $aluno["nome"] . "</td";
-        echo "<td>" . $aluno["idade"] . "</td";
-        echo "<td>" . $aluno["email"] . "</td";
-        echo "<td>" . $aluno["cursos"] . "</td";
-        echo "<td>" . $aluno["turma"] . "</td";
-        echo "<td>" . $aluno["telefone"] . "</td";
+        echo "<td>" . $aluno["nome"] . "</td>";
+        echo "<td>" . $aluno["idade"] . "</td>";
+        echo "<td>" . $aluno["email"] . "</td>";
+        echo "<td>" . $aluno["cursos"] . "</td>";
+        echo "<td>" . $aluno["turma"] . "</td>";
+        echo "<td>" . $aluno["telefone"] . "</td>";
         echo "</tr>";
     }
 
